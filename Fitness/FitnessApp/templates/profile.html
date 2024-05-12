@@ -1,0 +1,22 @@
+<!-- templates/profile.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://img.freepik.com/premium-photo/contemporary-spotless-fitness-gym-center-interiorgenerative-ai_391052-10889.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1710633600&semt=ais'); background-size: cover; background-position: center; color: white; padding: 20px;">
+  <div class="container">
+    <h1>User Profile</h1>
+
+    <p><strong>Name:</strong> {{ profile.name }}</p>
+    <p><strong>Email:</strong> {{ profile.email }}</p>
+    <p><strong>Age:</strong> {{ profile.age }}</p>
+    <p><strong>Weight:</strong> {{ profile.weight }} kg</p>
+    <p><strong>Height:</strong> {{ profile.height }} cm</p>
+    <p><strong>Subscription:</strong> {{ profile.subscription }}</p>
+    <p><strong>Total Visits:</strong> {{ profile.total_visits }}</p>
+    <p><a href="/">Back to homepage</a></p>
+  </div>
+</div>
+{% endblock %}

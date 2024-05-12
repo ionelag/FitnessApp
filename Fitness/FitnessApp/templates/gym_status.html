@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Gym Status{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+  <h1>Gym Status</h1>
+  <div style="margin-top: 20px; padding: 20px; border-radius: 10px; background-color: #f0f0f0; display: inline-block;">
+    {% if status == "Free" %}
+      <p style="font-size: 24px; color: green;">The gym is currently <strong>Free</strong>.</p>
+    {% elif status == "Almost Busy" %}
+      <p style="font-size: 24px; color: orange;">The gym is currently <strong>Almost Busy</strong>.</p>
+    {% else %}
+      <p style="font-size: 24px; color: red;">The gym is currently <strong>Busy</strong>.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

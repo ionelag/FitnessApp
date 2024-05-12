@@ -1,0 +1,39 @@
+<!-- templates/home.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://img.freepik.com/premium-photo/contemporary-spotless-fitness-gym-center-interiorgenerative-ai_391052-10889.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1710633600&semt=ais'); background-size: cover; background-position: center; color: white;">
+  <div style="padding: 20px;">
+    {% if user.is_authenticated %}
+      <h1>Hi {{ user.username }}!</h1>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" style="background-color: #4CAF50; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Log Out</button>
+      </form>
+      <br>
+      <a href="{% url 'profile' %}" style="background-color: #4CAF50; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Profile</a>
+    {% else %}
+      <h1>Welcome to Our Gym!</h1>
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}" style="background-color: #4CAF50; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Log In</a>
+    {% endif %}
+    <br>
+    <a href="{% url 'about' %}" style="background-color: #4CAF50; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">About Us</a>
+    <br>
+    <a href="{% url 'gym_status' %}" style="background-color: #4CAF50; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">See how busy we are right now</a>
+  </div>
+</div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li style='color:red;' {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% endblock %}
+
