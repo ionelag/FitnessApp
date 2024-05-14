@@ -1,4 +1,6 @@
-Fitness Gym Management SystemOverview
+Fitness Gym Management 
+
+SystemOverview
 
 This project is a Fitness Gym Management System developed using Django, aimed at enhancing the gym experience for both gym administrators and members. It includes features such as user registration, authentication, user profiles, gym status monitoring, and more.
 
