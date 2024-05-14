@@ -26,4 +26,4 @@ Usage
 ● Register as a new user or log in if you already have an account.
 ● Update your profile with your personal information and fitness goals.
 ● Check the gym status to see if it's free, almost busy, or busy.
-● Gym administrators can access the admin dashboard to manage users and monitor gym status.
+● Gym administrators can access the admin dashboard to manage users and monitor gym status. 
